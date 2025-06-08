@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgu4l0wgj1v8m"]
+
+[ext_resource type="Texture2D" uid="uid://cjonfoihsdsnk" path="res://Assets/Projectile/FireBallExploed.png" id="1_i34va"]
+[ext_resource type="Script" uid="uid://b4rgpdywbcouy" path="res://Scene/BulletTypes/fire_ball_explode.gd" id="1_uupqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x30dj"]
+atlas = ExtResource("1_i34va")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aya5h"]
+atlas = ExtResource("1_i34va")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grdfm"]
+atlas = ExtResource("1_i34va")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xwrb"]
+atlas = ExtResource("1_i34va")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r8rd"]
+atlas = ExtResource("1_i34va")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26qdy"]
+atlas = ExtResource("1_i34va")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07ct1"]
+atlas = ExtResource("1_i34va")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nf5tj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x30dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aya5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grdfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xwrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r8rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26qdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07ct1")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 16.0
+}]
+
+[node name="FireBallExplode" type="Node2D"]
+script = ExtResource("1_uupqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nf5tj")
+animation = &"explode"
+autoplay = "explode"
+frame_progress = 0.452666

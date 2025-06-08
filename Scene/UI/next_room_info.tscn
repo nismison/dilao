@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://6or2djt2rvfe"]
+
+[ext_resource type="Texture2D" uid="uid://dx2tsbnvebbw2" path="res://Assets/GUI/GUI.png" id="1_8rpkp"]
+[ext_resource type="Script" uid="uid://dl33eb8s27a4o" path="res://Scene/UI/next_room_info.gd" id="1_prc4p"]
+[ext_resource type="Theme" uid="uid://dshul2uwn057j" path="res://Scene/UI/ui_theme.tres" id="2_agi18"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agi18"]
+texture = ExtResource("1_8rpkp")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(81, 97, 30, 30)
+
+[node name="NextRoomInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_prc4p")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 63.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_agi18")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("2_agi18")
+text = "恶魔房"
+autowrap_mode = 3

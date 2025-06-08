@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbbfyym16ow4x"]
+
+[ext_resource type="PackedScene" uid="uid://de40i1ga5235w" path="res://Scene/player.tscn" id="1_f6udf"]
+[ext_resource type="Script" uid="uid://bpt8f1upmye5l" path="res://Scene/main.gd" id="1_r34rm"]
+[ext_resource type="PackedScene" uid="uid://b3i4homtfhcja" path="res://Scene/map.tscn" id="3_r34rm"]
+[ext_resource type="PackedScene" uid="uid://i7tmgblqqqa0" path="res://Scene/Enemy/gorgon.tscn" id="4_2wwxx"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_r34rm")
+
+[node name="Map" parent="." instance=ExtResource("3_r34rm")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Player" parent="." instance=ExtResource("1_f6udf")]
+scale = Vector2(1, 1)
+
+[node name="Gorgon" parent="." instance=ExtResource("4_2wwxx")]
+position = Vector2(-75, -44)

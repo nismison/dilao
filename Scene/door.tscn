@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://q2082cvylui2"]
+
+[ext_resource type="Texture2D" uid="uid://cmdtxntxxnqt2" path="res://Assets/Dungeon/Doors.png" id="1_d5ka1"]
+[ext_resource type="Script" uid="uid://f3qg60h1p8ue" path="res://Scene/door.gd" id="1_t1p54"]
+[ext_resource type="PackedScene" uid="uid://6or2djt2rvfe" path="res://Scene/UI/next_room_info.tscn" id="3_8kni7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1p54"]
+size = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kni7"]
+atlas = ExtResource("1_d5ka1")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5ka1"]
+atlas = ExtResource("1_d5ka1")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1p54"]
+atlas = ExtResource("1_d5ka1")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmuuw"]
+atlas = ExtResource("1_d5ka1")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwlx2"]
+atlas = ExtResource("1_d5ka1")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nccli"]
+atlas = ExtResource("1_d5ka1")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmuuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kni7")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5ka1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1p54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmuuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwlx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nccli")
+}],
+"loop": false,
+"name": &"openning",
+"speed": 8.0
+}]
+
+[node name="Door" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_t1p54")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_t1p54")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lmuuw")
+animation = &"openning"
+autoplay = "closed"
+frame = 4
+frame_progress = 1.0
+
+[node name="NextRoomInfo" parent="." instance=ExtResource("3_8kni7")]
+visible = false
+z_index = 10
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
