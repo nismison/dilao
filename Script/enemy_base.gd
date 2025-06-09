@@ -1,8 +1,9 @@
 extends CharacterBody2D
 class_name EnemyBase
 
-@export var slime_speed: float = 100.0
-@export var slime_health: float = 100.0
+@export var enemy_speed: float = 100.0
+@export var enemy_health: float = 100.0
+@export var enemy_godmode: bool = false
 @export var attack_damage: int = 10
 @export var chest_scene: PackedScene
 @export var min_distance_to_player: float = 200
@@ -66,7 +67,7 @@ func handle_behavior(delta: float):
 	var to_player = player.global_position - global_position
 	if to_player.length() > min_distance_to_player:
 		var move_dir = (player.global_position - global_position).normalized()
-		velocity = move_dir * slime_speed
+		velocity = move_dir * enemy_speed
 		current_state = EnemyState.MOVING
 	else:
 		velocity = Vector2.ZERO
@@ -75,6 +76,10 @@ func handle_behavior(delta: float):
 
 # 造成伤害
 func take_damage(from_direction: Vector2, damage: float):
+	if enemy_godmode:
+		print("Enemy 无敌状态中！")
+		return
+	
 	print("Enemy 被击中了！")
 	flash_white()
 	calculate_health(damage)
@@ -85,14 +90,15 @@ func flash_white():
 		return
 	flash_material.set_shader_parameter("flash", true)
 	flash_material.set_shader_parameter("flash_strength", 0.5)
+	flash_material.set_shader_parameter("enable_outline", false)
 	await get_tree().create_timer(0.1).timeout
 	flash_material.set_shader_parameter("flash", false)
 
 # 计算血量
 func calculate_health(damage: float):
-	slime_health -= damage
+	enemy_health -= damage
 	
-	if slime_health <= 0:
+	if enemy_health <= 0:
 		queue_free()
 
 # 获取到玩家的距离

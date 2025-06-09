@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://de40i1ga5235w" path="res://Scene/player.tscn" id="1_f6udf"]
 [ext_resource type="Script" uid="uid://bpt8f1upmye5l" path="res://Scene/main.gd" id="1_r34rm"]
 [ext_resource type="PackedScene" uid="uid://b3i4homtfhcja" path="res://Scene/map.tscn" id="3_r34rm"]
-[ext_resource type="PackedScene" uid="uid://i7tmgblqqqa0" path="res://Scene/Enemy/gorgon.tscn" id="4_2wwxx"]
+[ext_resource type="PackedScene" uid="uid://i7tmgblqqqa0" path="res://Scene/Enemy/fire_spirit.tscn" id="4_2wwxx"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_r34rm")
