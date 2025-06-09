@@ -28,6 +28,10 @@ mouse_cursor/custom_image="uid://b6iqn62kd3rmt"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[gui]
+
+theme/custom="uid://cq4v0a5raxguu"
+
 [input]
 
 move_left={

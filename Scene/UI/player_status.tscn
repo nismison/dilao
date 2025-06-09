@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp04svgu1snbc"]
+
+[ext_resource type="Texture2D" uid="uid://dx2tsbnvebbw2" path="res://Assets/GUI/GUI.png" id="1_jry25"]
+[ext_resource type="Texture2D" uid="uid://dss4746au5gax" path="res://Assets/Players/Hooded.png" id="2_lukaq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lukaq"]
+atlas = ExtResource("1_jry25")
+region = Rect2(96, 36, 26, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdftu"]
+atlas = ExtResource("1_jry25")
+region = Rect2(136, 20, 51, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyls6"]
+atlas = ExtResource("1_jry25")
+region = Rect2(72, 20, 51, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vx2h1"]
+atlas = ExtResource("1_jry25")
+region = Rect2(136, 4, 44, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0862"]
+atlas = ExtResource("1_jry25")
+region = Rect2(72, 4, 44, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa61x"]
+atlas = ExtResource("1_jry25")
+region = Rect2(122, 48, 38, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdgba"]
+atlas = ExtResource("2_lukaq")
+region = Rect2(5, 1, 20, 20)
+
+[node name="PlayerStatus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 26.0
+scale = Vector2(1.5, 1.5)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AvatarContainer" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_lukaq")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="StatusBar" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/StatusBar"]
+layout_mode = 2
+value = 85.0
+texture_under = SubResource("AtlasTexture_sdftu")
+texture_progress = SubResource("AtlasTexture_cyls6")
+
+[node name="EnergyBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/StatusBar"]
+layout_mode = 2
+value = 90.0
+texture_under = SubResource("AtlasTexture_vx2h1")
+texture_progress = SubResource("AtlasTexture_u0862")
+
+[node name="CoinContainer" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_sa61x")
+stretch_mode = 2
+
+[node name="Avatar" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 36.0
+offset_bottom = 36.0
+texture = SubResource("AtlasTexture_vdgba")
+
+[node name="CoinAmount" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 25.0
+offset_right = 93.0
+offset_bottom = 35.0
+text = "114514114"
+vertical_alignment = 1
+clip_text = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbfyym16ow4x"]
+[gd_scene load_steps=6 format=3 uid="uid://dbbfyym16ow4x"]
 
 [ext_resource type="PackedScene" uid="uid://de40i1ga5235w" path="res://Scene/player.tscn" id="1_f6udf"]
 [ext_resource type="Script" uid="uid://bpt8f1upmye5l" path="res://Scene/main.gd" id="1_r34rm"]
 [ext_resource type="PackedScene" uid="uid://b3i4homtfhcja" path="res://Scene/map.tscn" id="3_r34rm"]
 [ext_resource type="PackedScene" uid="uid://i7tmgblqqqa0" path="res://Scene/Enemy/fire_spirit.tscn" id="4_2wwxx"]
+[ext_resource type="PackedScene" uid="uid://dp04svgu1snbc" path="res://Scene/UI/player_status.tscn" id="5_3amdw"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_r34rm")
@@ -18,3 +19,10 @@ scale = Vector2(1, 1)
 
 [node name="Gorgon" parent="." instance=ExtResource("4_2wwxx")]
 position = Vector2(-75, -44)
+
+[node name="PlayerStatus" parent="." instance=ExtResource("5_3amdw")]
+offset_left = -384.0
+offset_top = 160.0
+offset_right = -384.0
+offset_bottom = 160.0
+scale = Vector2(1.5, 1.5)

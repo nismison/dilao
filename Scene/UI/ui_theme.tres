@@ -1,7 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dshul2uwn057j"]
-
-[ext_resource type="FontFile" uid="uid://k5xwhw5komqi" path="res://Assets/Fonts/fusion-pixel.ttc" id="1_tkxmx"]
-
-[resource]
-Label/font_sizes/font_size = 10
-Label/fonts/font = ExtResource("1_tkxmx")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dx2tsbnvebbw2" path="res://Assets/GUI/GUI.png" id="1_8rpkp"]
 [ext_resource type="Script" uid="uid://dl33eb8s27a4o" path="res://Scene/UI/next_room_info.gd" id="1_prc4p"]
-[ext_resource type="Theme" uid="uid://dshul2uwn057j" path="res://Scene/UI/ui_theme.tres" id="2_agi18"]
+[ext_resource type="Theme" uid="uid://cq4v0a5raxguu" path="res://Recource/GUI/ui_theme.tres" id="3_prc4p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agi18"]
 texture = ExtResource("1_8rpkp")
@@ -28,6 +28,6 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_agi18")
 [node name="Label" type="Label" parent="PanelContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-theme = ExtResource("2_agi18")
+theme = ExtResource("3_prc4p")
 text = "恶魔房"
 autowrap_mode = 3
